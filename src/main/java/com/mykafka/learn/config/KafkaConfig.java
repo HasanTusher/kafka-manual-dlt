@@ -1,5 +1,7 @@
 package com.mykafka.learn.config;
 
+import com.mykafka.learn.consumer.EmailListener;
+import com.mykafka.learn.producer.EmailSender;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
