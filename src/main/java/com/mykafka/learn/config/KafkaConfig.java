@@ -1,6 +1,8 @@
 package com.mykafka.learn.config;
 
+import com.mykafka.learn.consumer.DeadLetterListener;
 import com.mykafka.learn.consumer.EmailListener;
+import com.mykafka.learn.producer.DeadLetterSender;
 import com.mykafka.learn.producer.EmailSender;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -31,7 +33,6 @@ public class KafkaConfig {
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
-        //factory.setErrorHandler(new SeekToCurrentErrorHandler());
         return factory;
     }
 
